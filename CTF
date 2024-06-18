@@ -1,0 +1,33 @@
+1. ARP Storm
+What MAC address is initiating the ARP Storm?
+ssh -x over then use wireshark on the pcap make filter arp and find src mac
+
+
+
+
+00:07:0d:af:f4:54
+
+
+
+
+2. ARP – 1
+What is the MAC of 10.10.10.1?
+
+00:1d:09:f0:92:ab
+
+
+
+3. ARP – 2
+What is the MAC of 10.10.10.2?
+
+00:1a:6b:6c:0c:cc
+
+
+
+
+4. ARP – 3
+
+What is the MAC address of the system trying to perform the ARP MitM attack?
+
+
+
