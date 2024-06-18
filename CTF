@@ -28,6 +28,121 @@ What is the MAC of 10.10.10.2?
 4. ARP – 3
 
 What is the MAC address of the system trying to perform the ARP MitM attack?
+use arp.opcode == 2 for gratious arp or w/e and this will let us see packets that indicate a mitm
+
+check src mac/ip
+fa:16:3e:35:21:5a
+
+
+5. RARP – 1
+What is the OP code of a RARP Request?
+
+3
+
+
+6. RARP – 2
+What is the OP code of a RARP Response?
+
+4
+
+
+
+
+7. RARP – 3
+What is the RARP requestor’s MAC?
+arp.opcode == 3
+00:0c:29:34:0b:de
+
+8. RARP – 4
+What was the RARP requestor’s resolved IP address?
+kill filter go down frame and look at packet data
+10.1.1.100
+
+9. Gratuitous ARP – 1
+What is the MAC of the system spamming gratuitous ARP’s for 192.168.1.254?
+
+00:00:5e:00:01:01
+
+
+10. CDP – 1
+What is the software version of the Cisco Switch IOS (copy entire field “as is” from Wireshark)?
+
+
+cdp as filter
+right click copy value on CDP software version 
+IOS (tm) C2950 Software (C2950-I6K2L2Q4-M), Version 12.1(22)EA14, RELEASE SOFTWARE (fc1)
+
+
+
+
+
+11. CDP – 2
+What is the software version of the Cisco Router IOS (copy entire field “as is” from Wireshark)?
+IOS (tm) 1600 Software (C1600-NY-L), Version 11.2(12)P, RELEASE SOFTWARE (fc1)
+
+
+
+
+12. LLDP – 1
+What is the System Name of one of the LLDP sending devices?
+use LLDP as filter go and find system name
+S2.cisco.com
+
+13. STP – 1
+What is the Bridge Priority of the STP Root Bridge?
+use STP as filter
+go to root identefier
+root priorty
+0
+
+14. STP – 2
+What is the MAC address of the STP Root Bridge?
+
+root bridge system id under root identefier
+00:1f:27:b4:7d:80
+
+
+15. VTP – 1
+What is the VTP Management Domain Name?
+ok vlan trunking protocol
+management domain:
+cisco
+
+
+16. VTP – 2
+What is the latest configuration revision number?
+config revision number: 11
+11
+
+
+17. VTP – 3
+How many total VLANs are being advertised via VTP?
+manually count the amount of "VLAN information" tabs
+22
+
+
+18. VLAN – 1
+What is the message contained within the single tagged VLAN traffic coming from 11.22.33.44?
+
+
+ip.addr == 11.22.33.44
+maybe add and vlan? to filter
+check tcp segment data
+
+I pitty the foo
+
+19. VLAN – 2
+What is the VLAN ID of this traffic?
+
+
+
+999
+check ethernet header 
+
+
+20. VLAN Hopping – 1
+What is the VLAN ID being attacked by 10.10.10.10 using Double Tagging?
+
 
 
 
