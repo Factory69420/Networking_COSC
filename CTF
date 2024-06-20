@@ -361,3 +361,26 @@ click on packets under rip it will say ip address
 
 200.0.1.0,200.0.2.0
 
+
+
+
+
+
+42. RIP – 3
+
+What Protocol and port is being used for RIP?
+
+PROTOCOL PORT
+
+UDP 520
+
+
+43. EIGRPv4 – 1
+
+What network is being advertised via EIGRPv4
+
+
+-----------------------------------------------------------------------------------DAY 2--------------------------------------------------------------
+
+
+
