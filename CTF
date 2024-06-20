@@ -575,5 +575,96 @@ ether[12:2]=0x0806
 
 
 
+Basic Analysis - EVIL BIT
+What is the Berkeley Packet Filter, using tcpdump, to capture if the "Evil bit" is set? There should be 197 packets
+
+Enter the Filter syntax with no spaces
 
 
+Research Evil bit in networking to determine what it means so you can create a filter for it.
+
+RESERVED BIT
+
+ip[6]&128=128
+or
+ip[6]&0xE0=0xE0
+
+
+
+
+
+Basic Analysis - TOTAL CHAOS
+
+What is the Berkeley Packet Filter, using tcpdump, to capture any packets containing the CHAOS protocol within an IPv4 header? There should be 139 packets
+
+Enter the Filter syntax with no spaces
+
+HINT:
+Research how to identify the CHAOS protocol to determine how to filter for it.
+
+
+CHAOS PROTOCOL IS PORT 16
+
+ip[9]=16
+
+
+
+Basic Analysis - dscp
+
+What is the Berkeley Packet Filter, using tcpdump, to capture all IPv4 packets with the DSCP field of 37? There should be 42 packets.
+
+Enter the Filter syntax with no spaces
+
+ip[1]>>2=37
+
+
+
+
+Basic Analysis - traceroute
+What is the Berkeley Packet Filter, using tcpdump, to capture all IPv4 packets targeting just the beginning of potential traceroutes as it's entering your network. This can be from a Windows or Linux machine using their default settings? There should be 83 packets.
+
+Enter the Filter syntax with no spaces
+
+
+
+
+
+
+Basic Analysis - URGent EXFIL
+
+What is the Berkeley Packet Filter, using tcpdump, to capture all packets where the URG flag is not set and URG pointer has a value? There should be 43 packets
+
+Enter the Filter syntax with no spaces
+
+
+tcp[13]&32=0&&tcp[18:2]!=0
+
+
+
+Basic Analysis - NULL SCAN
+What is the Berkeley Packet Filter, using tcpdump, to capture a TCP null scan to the host 10.10.10.10? There should be 19 packets
+
+Enter the Filter syntax with no spaces
+HINT:
+Research NMAP Null scan to determine how to filter for it.
+
+
+
+ip[16:4]=0x0a0a0a0a&&tcp[13]=0
+
+
+
+
+
+Basic Analysis - VLAN HOPPING
+What is the Berkeley Packet Filter, using tcpdump, to capture an attacker using vlan hopping to move from vlan 1 to vlan 10? There should be 15 packets
+
+Enter the Filter syntax with no spaces
+
+
+0xx8100000 is vlan1
+0x8100000a is vlan 10
+
+0xffff0fff is the pcp/dei in vlan tag under ethernet 2
+
+ether[12:4]&0xffff0fff=0x81000001&&ether[16:4]&0xffff0fff=0x8100000a
