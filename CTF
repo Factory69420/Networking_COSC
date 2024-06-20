@@ -381,6 +381,199 @@ What network is being advertised via EIGRPv4
 
 
 -----------------------------------------------------------------------------------DAY 2--------------------------------------------------------------
+sudo tcpdump  -r /home/activity_resources/pcaps/BPFCheck.pcap "FILTER HERE!!!!!!" | wc -l
+
+
+Basic Analysis - ttl
+What is the Berkeley Packet Filter, using tcpdump, to capture all packets with a ttl of 64 and less, utilizing the IPv4 or IPv6 Headers? There should be 8508 packets.
+
+Enter the Filter syntax with no spaces
+
+ip[8]<=64||ip6[7]<=64
+
+
+
+Basic Analysis - dont fragment
+
+
+What is the Berkeley Packet Filter, using tcpdump, to capture all IPv4 packets with at least the Dont Fragment bit set? There should be 2321 packets.
+
+Enter the Filter syntax with no spaces
+
+ip[6]&0x40=0x40
+
+
+
+
+
+Basic Analysis - high port
+What is the Berkeley Packet Filter, using tcpdump, to capture traffic with a Source Port higher than 1024, utilizing the correct Transport Layer Headers? There should be 7805 packets.
+
+Enter the Filter syntax with no spaces
+
+tcp[0:2]>1024||udp[0:2]>1024
+
+
+
+
+Basic Analysis - udp
+
+What is the Berkeley Packet Filter, using tcpdump, to capture all Packets with UDP protocol being set, utilizing the IPv4 or IPv6 Headers? There should be 1277 packets.
+
+Enter the Filter syntax with no spaces
+
+
+ip[9]=0x11||ip6[6]=0x11
+
+
+Basic Analysis - tcp flags
+
+What is the Berkeley Packet Filter, using tcpdump, to capture only packets with the ACK/RST or ACK/FIN flag set, utilizing the correct Transport Layer Header? There should be 1201 packets.
+
+Enter the Filter syntax with no spaces
+
+
+
+tcp[13]=20||tcp[13]=17
+
+
+Basic Analysis - id
+
+What is the Berkeley Packet Filter, using tcpdump, to capture all packets with an IP ID field of 213? There should be 10 packets.
+
+Enter the Filter syntax with no spaces
+
+
+ip[4:2]=213
+
+
+
+
+
+
+
+Basic Analysis - vlan
+
+What is the Berkeley Packet Filter, using tcpdump, to capture all traffic that contains a VLAN tag? There should be 182 packets.
+
+Enter the Filter syntax with no spaces
+
+
+
+ether[12:2]=0x8100
+
+
+
+
+Basic Analysis - dns
+
+What is the Berkeley Packet Filter, using tcpdump, to capture all packets relating to DNS? There should be 63 packets.
+
+Enter the Filter syntax with no spaces
+
+
+
+
+tcp[0:2]=53||tcp[2:2]=53||udp[0:2]=53||udp[2:2]=53
+
+
+
+Basic Analysis - CLIENT CONNECTIONS
+
+
+What is the Berkeley Packet Filter, using tcpdump, to capture the initial packets from a client trying to initiate a TCP connection? There should be 3447 packets
+
+Enter the Filter syntax with no spaces
+
+
+HINT:
+What TCP flags are set by the client when initiating a TCP connection to a server?
+
+tcp[13]=2
+
+
+
+
+Basic Analysis - OPEN PORTS
+
+What is the Berkeley Packet Filter, using tcpdump, to capture the response packets from a server listening on an open TCP ports? There should be 277 packets
+
+Enter the Filter syntax with no spaces
+
+
+
+Continuing from CLIENT CONNECTIONS. What flags do the server use to respond to the connection request if the port is open?
+
+
+
+tcp[13]=18
+
+Basic Analysis - CLOSED PORTS
+
+What is the Berkeley Packet Filter, using tcpdump, to capture the response packets from a server with closed TCP ports There should be 17 packets
+
+Enter the Filter syntax with no spaces
+
+
+
+
+Continuing from CLIENT CONNECTIONS. What flags do the server use to respond to the connection request if the port is closed?
+
+
+
+tcp[13]=4
+
+
+
+Basic Analysis - WELL KNOWN PORTS
+
+What is the Berkeley Packet Filter, using tcpdump, to capture all TCP and UDP packets sent to the well known ports? There should be 3678 packets
+
+Enter the Filter syntax with no spaces
+
+
+
+
+
+
+tcp[2:2]<1024||udp[2:2]<1024
+
+
+
+
+Basic Analysis - HTTP
+
+What is the Berkeley Packet Filter, using tcpdump, to capture all HTTP traffic? There should be 1404 packets
+
+Enter the Filter syntax with no spaces
+
+
+tcp[0:2]=80||tcp[2:2]=80
+
+
+
+
+Basic Analysis - TELNET
+What is the Berkeley Packet Filter, using tcpdump, to capture all telnet traffic? There should be 62 packets
+
+Enter the Filter syntax with no spaces
+
+
+
+tcp[0:2]=23||tcp[2:2]=23
+
+
+
+
+Basic Analysis - ARP
+What is the Berkeley Packet Filter, using tcpdump, to capture all ARP traffic? There should be 40 packets
+
+Enter the Filter syntax with no spaces
+
+
+ether[12:2]=0x0806
+
+
 
 
 
