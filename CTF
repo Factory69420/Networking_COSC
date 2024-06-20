@@ -625,6 +625,25 @@ What is the Berkeley Packet Filter, using tcpdump, to capture all IPv4 packets t
 
 Enter the Filter syntax with no spaces
 
+Hint 1:
+Research how traceroute operates.
+
+How can you identify an initial traceroute that enters your network?
+
+
+Hint 2:
+What is the default carrier protocols used by Windows?
+
+By Linux?
+
+
+https://www.hackingarticles.in/working-of-traceroute-using-wireshark/
+
+
+
+ip[8]=1&&(ip[9]=0x11||ip[9]=0x01)
+
+
 
 
 
