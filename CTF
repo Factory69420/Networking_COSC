@@ -379,6 +379,88 @@ UDP 520
 
 What network is being advertised via EIGRPv4
 
+do eigrp filter and look at update packet
+
+192.168.4.0/24
+
+
+
+
+
+
+44. EIGRPv4 – 2
+
+
+google
+88
+
+
+
+45. EIGRPv4 – 3
+What multicast address is used to send EIGRPv4 updates?
+
+224.0.0.10
+
+46. EIGRPv6 – 1
+What network is being advertised via EIGRPv6
+
+
+
+2001:db8:0:400::/64
+
+
+47. EIGRPv6 – 2
+
+What multicast address is used to send EIGRPv6 updates?
+
+ff02::a
+
+
+
+
+
+48. EIGRPv6 – 3
+
+What Autonomous system number is being used?
+
+
+100
+
+
+look at hello ack frame
+
+
+
+49. OSPF – 1
+
+What is the IP protocol number used for OSPF?
+
+
+google
+
+89
+
+
+
+
+
+
+
+50. OSPF – 2
+
+What is the IP address of the OSPF designated router (DR)?
+
+type in ospf look at hello packet and it will say
+
+192.168.170.8
+
+
+
+51. OSPF – 3
+
+What multicast address is used by the DR to send updates?
+
+
 
 -----------------------------------------------------------------------------------DAY 2--------------------------------------------------------------
 sudo tcpdump  -r /home/activity_resources/pcaps/BPFCheck.pcap "FILTER HERE!!!!!!" | wc -l
