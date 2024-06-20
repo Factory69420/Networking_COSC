@@ -143,6 +143,221 @@ check ethernet header
 20. VLAN Hopping – 1
 What is the VLAN ID being attacked by 10.10.10.10 using Double Tagging?
 
+ip.addr == 10.10.10.10
+
+check virtual lan id
+
+250
 
 
+
+
+
+
+21. VLAN Hopping – 2
+
+What is the combined message being sent via ICMP?
+same filter look at all 8 icmp packets
+
+
+Wouldn't you like too be a Pepper Too!
+
+
+
+22. ICMP – 1
+
+
+What is the OS of 192.168.1.1 host based off its Echo Request message to the Google DNS?
+
+ip.addr == 192.168.1.1
+
+Linux
+(based off of 64 being ttl)
+
+
+
+
+23. ICMP – 2
+What is the message that 192.168.65.20 sending to Google's DNS via ICMP?
+
+Exsqueeze me?
+
+
+
+24. ICMP – 3
+How many Hops away is the 151.101.64.84 address?
+ip.addr == 151.101.64.84
+first pack has 10.10.10.10 look at the ttl of that first packet.
+
+
+
+11
+
+
+
+25. ICMP – 4
+What is the OS of 10.10.205.253 host based off its Echo Request message to 10.10.0.40?
+
+
+icmp.type == 8 and ip.addr == 10.10.205.253
+
+ttl is 123
+
+Windows
+
+
+26. Fragmented – 1
+What is the IP ID of the fragmented ICMP packet in Decimal? (starting at packet 6472)
+
+Scroll to frame 6472 and look at IPV4 identiication hex and decimal value.
+
+46544
+
+
+
+27. Fragmented – 2
+
+What is the offset value of the fragments?
+
+    Not the calculated value shown in Wireshark
+
+    Suggest converting the value from the Hex Dump
+
+go to next frame for some reason 
+look at fragment offset in hex and chatgpt it to decimal
+
+
+122
+
+
+
+
+28. ICMPv6 – 1
+
+
+What is the ICMPv6 type number of Echo Request?
+
+
+128 (Use chatgpt)
+
+
+
+29. ICMPv6 – 2
+What is the ICMPv6 type number of Echo Reply?
+
+129 (use chatgpt)
+
+
+
+30. ICMPv6 – 3
+
+What is the ICMPv6 type number of the Router Advertisement message?
+
+134(use chatgpt)
+
+
+
+
+31. ICMPv6 – 4
+What is the link-layer address of the advertising router?
+
+icmpv6.type == 134
+
+router advertisement from:
+fa:16:3e:35:21:5a
+
+
+32. ICMPv6 – 5
+What is the IPv6 prefix being advertised?
+
+look at icmpv6 option prefix information
+beef:4:f00d::
+
+
+
+33. HSRP – 1
+What is the HSRP virtual IP?
+
+use hsrp filter
+go to cisco hot standby router protocol
+find virtual ip address field
+192.168.0.1
+
+
+34. HSRP – 2
+What is the HSRP multicast address used?
+
+224.0.0.2 (the desination address on the hsrp packets)
+
+
+35. HSRP – 3
+What is the IP address of the HSRP Active forwarder (before the takeover)?
+
+first source IP to send HSRP packets
+
+192.168.0.30
+
+
+36. HSRP – 4
+
+What is the IP address of the HSRP Active forwarder (after the takeover)?
+
+
+last source IP to send hsrp packets
+192.168.0.10
+
+
+
+37. VRRP – 1
+What is the VRRP multicast address used?
+
+vrrp
+look at destination ip
+
+224.0.0.18
+
+38. VRRP – 2
+What is the VRRP virtual IP?
+
+same filter look at vrrp in packet data and it will say IP ADDRESS:
+
+192.168.1.254
+
+
+
+
+
+
+
+
+
+39. VRRP – 3
+How many total devices are communicating via VRRP?
+
+
+look at how many different ips send packets via VRRP
+3
+
+
+40. RIP – 1
+
+How many networks are being advertised via RIP?
+
+use rip as filter
+I just guessed
+
+2
+
+
+
+41. RIP – 2
+
+What are the networks being advertised (in numeric order separated by commas and no spaces)?
+
+(i.e. 1.0.0.0,2.0.0.0 )
+click on packets under rip it will say ip address
+
+
+
+200.0.1.0,200.0.2.0
 
