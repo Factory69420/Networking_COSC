@@ -712,3 +712,64 @@ xxd file.txt file-encoded.txt
 
 Decode file from Hex:
 xxd -r file-encoded.txt file-decoded.txt
+
+
+
+
+Net Recon Method
+
+Host Discovery
+	Ruby ping sweep if ping available
+	nmap scan if no ping
+Port Discovery
+	 nmap
+	 nc scan script
+port Validation
+	Banner grabbing using nc
+Follow on actions based on ports found
+	if 21 ftp ip [addr] connects to ftp server
+		passive
+		ls
+		get [file name]
+	if 21 or 80 wget -r IP_ADDRESS (or) wget -r ftp://IP_ADDRESS (or) firefox
+	if 22 or 23 CONNECT and PASSIVE RECOn
+
+
+
+Scan Methodology
+ nmap -Pn [IP Addr] -T4 -p 21-23,80
+	Quick Sca Ports 21-23, 80
+	Specific ports based on hints/clues found
+	Well known port range
+	which tcpdump wireshark nmap telnet get curl ping
+
+	0-1023 (Actaully scan 1-1023)
+	Chunks of 2000 or first 10000 ports (65535)
+
+
+
+
+Passive Recon Methodology
+	Italicized/bolded words are comands
+
+	Command: Hostname
+	permissions:
+		sudo -l
+	interfaces and subnets
+		ip a # Shows ips and cidrs
+	Neighbors
+		ip neigh # Find neighbors that nmap might not find
+	files of interest
+		find / -iname flag*2>/dev/null #dev/null part gets rid of errors
+		find / -iname hint*
+	Other listening ports
+		ss -ntlp # Finds all tcp listening ports n is name resoloution see 22 instead of "ssh"
+	Available tools
+		which tcpdump wireshark nmap telnet get curl ping
+
+
+	
+
+
+
+
