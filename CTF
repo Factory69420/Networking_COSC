@@ -472,7 +472,7 @@ How many networks are being advertised via BGP?
 3
 
 
-just used ospf as a filter and looked at ip in the packets that showed up
+just used BGP as a filter and looked at ip in the packets that showed up
 
 
 
@@ -482,11 +482,16 @@ What are the networks being advertised (in numeric order separated by commas and
 
 (i.e. 1.0.0.0,2.0.0.0)
 
+BGP check packets for cidrs
+
+
+10.0.0.0/8,172.16.0.0/16,192.168.4.0/22
 
 
 
 
-
+54. BGP – 3
+What Autonomous system number is the 192.168.0.10 peer in?
 
 
 
