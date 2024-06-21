@@ -460,6 +460,36 @@ type in ospf look at hello packet and it will say
 
 What multicast address is used by the DR to send updates?
 
+224.0.0.5
+
+
+
+52. BGP – 1
+
+How many networks are being advertised via BGP?
+
+
+3
+
+
+just used ospf as a filter and looked at ip in the packets that showed up
+
+
+
+
+53. BGP – 2
+What are the networks being advertised (in numeric order separated by commas and no spaces)?
+
+(i.e. 1.0.0.0,2.0.0.0)
+
+
+
+
+
+
+
+
+
 
 
 -----------------------------------------------------------------------------------DAY 2--------------------------------------------------------------
