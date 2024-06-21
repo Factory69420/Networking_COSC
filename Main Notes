@@ -683,16 +683,19 @@ BitWise Masking
 
 
 
+--------------------------------------------------------------------------------------------DAY 3------------------------------------------------------------------------------------------
+
+127.0.0.1 is important for some reason local host??? loopback? its who we are going to
+
+
+ python3 ./sock_stream.py
+nc -lvp 1111
 
 
 
+python3 ./dgram_client.py
 
-
-
-
-
-
-
+dgram nc -lvup 2222
 
 
 
