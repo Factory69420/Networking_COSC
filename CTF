@@ -492,8 +492,12 @@ BGP check packets for cidrs
 
 54. BGP – 3
 What Autonomous system number is the 192.168.0.10 peer in?
+use bgp filter 
 
 
+use bgp filter open keepalive/update combo  packet
+under path attribute agggregator AS: 65210
+65210
 
 
 
