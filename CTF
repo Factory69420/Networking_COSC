@@ -639,16 +639,252 @@ find PASV multiply blue text 2nd to last number by 256 then add furtherst right 
 14. HTTP – 1
 What was the HTTP site reached (without any errors or redirects)?
 
+www.faqs.org
+
+
+
+15. HTTP – 2
+
+What was the HTTP site that was “Moved Temporarily”?
+
+snippets.cdn.mozilla.net
+
+
+16. HTTP – 3
+
+What was the HTTP site that was “Moved Permanently”?
+
+
+
+msn.com
+
+17. HTTP – 4
+
+What was the HTTPs (TLS) site that was reached?
+tcp.port==443
+
+after 3 way handshake follow stream
+twitter.com
+
+
+18. SMTP – 1
+
+
+
+What is the SMTP domain name?
+
+(i.e. domain.com )
 
 
 
 
+virginmedia.com
+
+
+
+19. SMTP – 2
+
+who sent the email to (cuizw@public.qd.sd.cn)?
+
+owadomyi2897@virginmedia.com
+
+20. SMTP – 3
+
+From the message, what are “self-explanatory”?
+
+sizes
+
+21. SMTP – 4
+What is the name of the SMTP server communicating over IPv6?
+
+smtp and ipv6
+
+mx.google.com
+
+
+
+22. IMAP – 1
+
+
+What is the username that signed-in via IMAP?
+
+
+neulingern
+
+
+23. IMAP – 2
+
+How many emails were “fetched”?
+
+
+13
+
+
+24. IMAP – 3
+Who is “reporting a similar situation” via the emails?
+
+
+
+Jerry Hammons
+
+
+25. POP – 1
+
+What is the POP mailbox address?
+
+digitalinvestigator@networksims.com
+
+
+
+26. POP – 2
+
+How many messages does this mailbox have?
+
+
+3
 
 
 
 
+27. POP – 3
+
+What is the name of the University in one of the email messages?
 
 
+Edinburgh Napier University
+
+28. NTP – 1
+
+What is the IP of the NTP server?
+
+
+
+192.168.50.50
+
+
+
+29. NTP – 2
+
+What is the Transmit Timestamp in the NTP messages (MON DAY, YEAR)?
+
+Sep 27, 2004 
+
+
+
+30. NTP – 3
+What is the NTP version number?
+
+
+
+3
+
+
+31. SSH – 1
+
+What is the SSH server IP address?
+
+172.16.40.10
+
+
+
+
+32. SSH – 2
+
+
+What is the SSH protocol version being used by both (copy entire field “as is” from Wireshark)?
+
+
+SSH-2.0-OpenSSH_7.9p1 Debian-10+deb10u2
+
+
+
+33. SSH – 3
+
+Which asymmetric encryption protocol is being used?
+
+
+Diffie-Hellman
+
+34. SSH – 4
+What is the MSS option set to for the SSH communication?
+
+    MSS can be found in the SYN exchange.
+
+
+
+1410
+
+
+35. SSH – 5
+
+
+What is the windows scale shift option set to?
+
+    Windows scale can be found in the SYN exchange.
+
+7
+
+
+
+
+36. TELNET – 1
+
+What is the username/password of the account used via telnet?
+
+
+fake/user
+
+
+37. TELNET – 2
+
+What is the exact first command issued on the remote system over telnet?
+
+/sbin/ping www.yahoo.com
+
+
+38. TELNET – 3
+
+What was the second command issued?
+
+
+39. TELNET – 4
+What is the inital sequence number of the client?
+
+    suggest to convert the Hexdump to Decimal
+
+
+
+40. TELNET – 5
+
+What is the MSS of the server?
+
+1448
+
+41. RADIUS – 1
+
+What was the username used to log in via RADIUS
+
+
+
+42. RADIUS – 2
+
+What is the RADIUS Request code?
+
+1
+
+43. RADIUS – 3
+
+What is the RADIUS Accept code?
+
+2
+
+
+
+
+44. RADIUS – 4
+
+
+What is the RADIUS Challenge code?
 
 
 
