@@ -579,6 +579,75 @@ What webpage was the “AAAA” record requested for?
 
 wikipedia.org
 
+8. DNS – 3
+
+What mail server was the “MX” record requested for?
+
+hotmail.com
+
+
+9. DNS – 4
+
+What domain was the Zone transfer requested for?
+
+etas.com
+
+10. FTP – 1
+
+What is the username/password used for the FTP authentication?
+
+
+
+
+student10/password10
+
+
+
+
+11. FTP – 2
+
+What was the filename requested via FTP?
+
+
+DO_NOT_LOOK.txt
+
+
+
+12. FTP – 3
+
+
+What was the message in the file transferred via FTP?
+
+look at ftp-data stream look at RETR PACKET!!!!
+Schrodinger's Cat
+
+
+
+
+13. FTP – 4
+
+
+What was the source and destination ports used for the Passive FTP (SPORT:DPORT)?
+
+find PASV multiply blue text 2nd to last number by 256 then add furtherst right number
+
+
+42452:38591
+
+
+
+14. HTTP – 1
+What was the HTTP site reached (without any errors or redirects)?
+
+
+
+
+
+
+
+
+
+
 
 
 
