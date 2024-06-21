@@ -808,3 +808,114 @@ Enter the Filter syntax with no spaces
 0xffff0fff is the pcp/dei in vlan tag under ethernet 2
 
 ether[12:4]&0xffff0fff=0x81000001&&ether[16:4]&0xffff0fff=0x8100000a
+
+
+
+
+-------------------------------------------DAY 3---------------------------------------------------------------------
+AddressFamilies
+
+What are the 3 Address Families associated with the python3 socket module?
+
+example:
+
+socket.ADDFAM, socket.ADDFAM, socket.ADDFAM
+
+
+socket.AF_INET, socket.AF_INET6, socket.AF_UNIX
+
+
+
+
+Connections
+
+What are the two socket functions called for a Client to open a connection and to disconnect from that connection?
+
+example:
+
+socket.fun(), socket.func()
+
+
+socket.connect(), socket.close()
+
+
+Header Preparation
+
+What python3 library function is utilized to combine the various pieces of your raw socket packet into network order?
+
+example:
+
+module.function
+
+Sgt Hutch helped me :)
+Check FG for struct module stuf
+struct.pack
+
+
+Missing Data
+
+What must be manually created with raw sockets that stream and datagram sockets creates for you?
+
+header
+
+
+
+Sending UDP
+
+What function within the socket module allows you to Send data to a socket, while not already being connected to a remote socket?
+
+example:
+
+socket.func()
+
+
+socket.sendto()
+
+
+Transport Layer Sockets
+
+Provide an example of the two required items needed to be set in order to send a Datagram or Stream socket? (excluding any of the socket.socket functions)
+
+example:
+
+item1 item2
+
+These are the 2 parts to a socket
+
+
+ip port
+
+
+
+
+Objects
+
+
+
+When sending data across a connection, what must a string be converted to before being sent due to encoding?
+
+bytes
+
+
+
+
+
+Stream Socket Message Sender
+
+
+
+Gorgan Forces have requested you get a message to one of their remote teams that are utilizing the BLUE_DMZ_HOST-1. Utilizing the criteria they provided, generate a stream socket with python3:
+
+Coded information was placed into the video below. Look at the note the woman passes to the man.
+
+https://youtu.be/6WTdTwcmxyo?t=35
+
+    From your INTERNET-HOST to the BLUE_DMZ_HOST-1
+    Port number = #Last four digits on the note
+
+    Message = #Name on the note (First letter capitalized)
+
+
+
+
+
