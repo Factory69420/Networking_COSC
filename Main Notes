@@ -700,15 +700,15 @@ dgram nc -lvup 2222
 
 
 
+Encode text to Hex:
+echo "Message" | xxd
 
 
 
 
+Encode file to Hex:
+xxd file.txt file-encoded.txt
 
 
-
-
-
-
-
-
+Decode file from Hex:
+xxd -r file-encoded.txt file-decoded.txt
