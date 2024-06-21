@@ -917,5 +917,102 @@ https://youtu.be/6WTdTwcmxyo?t=35
 
 
 
+f8fa738ae384ee76751805dd6829061b
+
+
+
+
+
+
+Datagram Socket Message Sender
+
+
+
+
+
+
+Gorgan Forces have requested you get a message to one of their remote teams that are utilizing the INTERNET_HOST. Utilizing the criteria they provided, generate a datagram socket with python3:
+
+Coded information was placed into the video below. Listen to the words in the video.
+
+https://youtu.be/OuK4OcMUGcg?t=67
+
+    Send to your INTERNET-HOST localhost.
+
+    Port number = #The number of fists
+
+    Message = #The name of the band (First letter capitalized)
+
+
+c474ddb8e189a2b316a8078e74e7be80
+
+
+
+Raw IPv4 Socket
+
+Gorgan forces, tool development cell have provided IPRAW.py for your teams use, it defines the basic structure of the desired result.
+
+    Create a raw socket and code your message into the socket.
+    Send your last name as the data.
+    The sent data is required to be encoded, with a final result of the data being in hex.
+    When viewing in Wireshark, the packet should not be malformed.
+
+
+Source IP: 10.10.0.40
+
+Target IP: 172.16.1.15
+
+DSCP: 24
+
+IP ID: 1984
+
+Protocol: CHAOS
+
+To receive the flag:
+
+    Open a netcat listener on port 1111 on the Internet_Host.
+    nc -lvp 1111
+    send your RAW Socket
+
+3abda5f1add26199e12d0d912ff5d6a1
+
+
+
+
+Raw IPv4 TCP Sockets
+
+
+Gorgan forces, tool development cell have provided TCPRAW.py for your teams use, it defines the basic structure of the desired result.
+
+    Create a raw socket and code your message into the socket.
+    Send your last name as the data.
+    The sent data is required to be encoded, with a final result of the data being in base64.
+    When viewing in Wireshark, the packet should not be malformed.
+
+
+Source IP: 10.10.0.40
+
+Target IP: 172.16.1.15
+
+IP ID: 2020
+
+TCP Src port: 54321
+
+TCP Dst port: 1234
+
+SEQ Number: 90210
+
+ACK Number: 30905
+
+TCP flag: SYN
+
+To receive the flag:
+
+    Open a netcat listener on port 1111 on the Internet_Host.
+    nc -lvp 1111
+    send your RAW Socket
+
+
+38c18da58b334968b518141a1e4b51dc
 
 
