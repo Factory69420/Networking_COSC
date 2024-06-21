@@ -500,6 +500,88 @@ under path attribute agggregator AS: 65210
 65210
 
 
+55. BGP – 4
+
+
+
+What Protocol and port is being used for BGP?
+
+Transport PROTOCOL PORT
+
+
+
+TCP 179
+
+
+
+
+
+1. SMB – 1
+
+What Protocol and port is being used for SMB?
+
+PROTOCOL PORT
+
+TCP 445
+
+
+2. SMB – 2
+
+What is the name of the file accessed via SMB?
+
+    Follow the stream
+
+
+
+putty.exe
+
+
+
+
+
+
+
+3. DHCP – 1
+
+What is the IP address of the DHCP server?
+
+192.168.0.1
+
+
+
+
+4. DHCP – 2
+
+
+What is the “offered” IP address?
+
+192.168.0.10
+
+
+
+5. DHCP – 3
+
+What is the DHCP lease time (in seconds)?
+
+
+3600
+
+
+6. DNS – 1
+What ".com" webpage was the “A” record requested for?
+
+microsoft
+
+
+7. DNS – 2
+
+What webpage was the “AAAA” record requested for?
+
+wikipedia.org
+
+
+
+
 
 -----------------------------------------------------------------------------------DAY 2--------------------------------------------------------------
 sudo tcpdump  -r /home/activity_resources/pcaps/BPFCheck.pcap "FILTER HERE!!!!!!" | wc -l
