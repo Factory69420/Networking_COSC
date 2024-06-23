@@ -869,7 +869,9 @@ What is the MSS of the server?
 
 What was the username used to log in via RADIUS
 
+type radius follow accept udp stream and look for the full sentence that says "Hello username"
 
+John.McGuirk
 
 42. RADIUS – 2
 
@@ -890,6 +892,154 @@ What is the RADIUS Accept code?
 
 
 What is the RADIUS Challenge code?
+
+go to challenge packet and look in packet information
+
+11
+
+
+
+
+
+
+
+45. TACACS+ – 1
+
+
+What is the IP of the TACACS+ server?
+
+tcp.port = 49
+
+192.168.1.5
+
+
+
+
+46. TACACS+ – 2
+
+
+What is the Source port used for the communication?
+
+59087
+
+
+
+
+47. TACACS+ – 3
+
+What is the Maximum Segment Size (MSS) option set to for the TACACS+ communication?
+
+look at the syn syn/ack that started the stream
+
+
+1460
+
+
+
+
+48. TACACS+ – 4
+
+
+What is the starting window size of the TACACS+ client?
+
+
+
+window size in packet info
+
+4128
+
+
+
+
+
+
+49. SNMP – 1
+
+
+What SNMP version is being used?
+
+
+3
+
+
+
+
+50. SNMP – 2
+
+
+
+What is the IPv4 address of the SNMP server?
+
+It will be the system doing the get-request
+
+
+
+
+10.0.0.150
+
+
+
+51. SNMP – 3
+
+
+What is the IPv6 address of the SNMP server?
+
+It will be the system doing the get-request
+
+
+SNMP and ipv6
+
+2001:470:e5bf:1001:1cc7:73ff:65f5:a2f7
+
+
+
+
+52. SNMP – 4
+
+
+What Protocol and port is being used for SNMP communication?
+
+PROTOCOL PORT
+
+UDP 161
+
+
+
+53. TFTP – 1
+
+
+What is the IP address of the TFTP server?
+
+192.168.0.13
+
+
+
+
+
+54. TFTP – 2
+
+
+What is the name of the file uploaded to the TFTP server?
+
+
+rfc1350.txt
+
+
+55. TFTP – 3
+
+
+How many TFTP “Blocks” were used to send the file?
+
+
+
+go to bottom tftp packet and find the block that says (Last)
+
+49
+
+
+
+
+
 
 
 
