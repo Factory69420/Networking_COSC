@@ -2,6 +2,8 @@ FG - https://net.cybbh.io/public/networking/latest/index.html
 VTA Logon - networking-ctfd-1.server.vta:8000 (http://10.50.20.180:8000/)
 Miro - https://miro.com/app/board/o9J_klSqCSY=/?share_link_id=16133753693
 IP- ssh student@10.50.36.137 -X
+Test Day - July 9th
+
 
 
 Protocol Data Unit (PDU)
@@ -977,7 +979,6 @@ Passive Recon Methodology
 
 
 
-
 ----------------------------------------------------------------------------------------DAY 4--------------------------------------------------------
 
 more /etc/p0f/p0f.fp
@@ -987,20 +988,50 @@ sudo p0f -i eth0
 sudo p0f -r test.pcap
 
 
+Netscan TCP SCRIPT
+
+
+#!/bin/bash
+echo "Enter network address (e.g. 192.168.0): "
+read net
+echo "Enter starting host range (e.g. 1): "
+read start
+echo "Enter ending host range (e.g. 254): "
+read end
+echo "Enter ports space-delimited (e.g. 21-23 80): "
+read ports
+for ((i=$start; $i<=$end; i++))
+do
+    nc -nvzw1 $net.$i $ports 2>&1 | grep -E 'succ|open'
+done
 
 
 
+NETSCAN UDP Script
+
+
+#!/bin/bash
+echo "Enter network address (e.g. 192.168.0): "
+read net
+echo "Enter starting host range (e.g. 1): "
+read start
+echo "Enter ending host range (e.g. 254): "
+read end
+echo "Enter ports space-delimited (e.g. 21-23 80): "
+read ports
+for ((i=$start; $i<=$end; i++))
+do
+    nc -nuvzw1 $net.$i $ports 2>&1 | grep -E 'succ|open'
+done
 
 
 
+Ping Scanning
+ping -c 1 172.16.82.106
 
+for i in {1..254}; do (ping -c 1 172.16.82.$i | grep "bytes from" &) ; done
 
-
-
-
-
-
-
+sudo nmap -sP 172.16.82.96/27
 
 
 
