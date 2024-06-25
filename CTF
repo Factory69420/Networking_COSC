@@ -2105,3 +2105,22 @@ Copy only the name where HOSTNAME is at
 red-host-4
 
 
+
+
+30. DMZ2 Recon T3
+
+Interface with the web service on T3. The hint provides a suggestion on the ports above the well-known that you will need to recon. What is the range? (provide the range in the format of the example below)
+
+example:
+
+1000-2000
+
+wget -r http://172.16.140.33
+
+
+
+mimeopen -d hint-01.png
+
+
+
+
