@@ -2302,8 +2302,20 @@ red-internet-host
 
 
 
+--------------------------------------------------------------DAY 5------------------------------------------------------
 
 
+Relay 1
+
+Utilize the targets T2 and RELAY to develop the following netcat relays for use by Gorgan Cyber Forces. The use of names pipes should be utilized on RELAY:
+
+Syntax for steghide tool:
+steghide extract -sf [image name]
+Passphrase: password
+
+    The Donovian Insider provided a image called 1steg.jpg on T2 and is trying to connect to RELAY on TCP port 1234 to send the file. Establish a Netcat relay on RELAY to accept this connection and forward to T1. Once the images are downloaded you will use a command-line tool called steghide to extract the message. Perform an MD5SUM on this message to create flag1.
+
+    File should be 89824 bytes in size. 
 
 
 
