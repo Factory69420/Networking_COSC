@@ -2318,16 +2318,23 @@ Passphrase: password
     File should be 89824 bytes in size. 
 
 
+Blue host:
+nc -lvp 1111 > 1steg 
+
+Relay:
+
+
+nc 10.10.0.40 1111 < mypipe | nc -lvp 1234 > mypipe
 
 
 
 
+bluehost:
+steghide extract -sf 1steg 
 
+cat phrase1.txt | md5sum
 
-
-
-
-
+6abd7feac505f1384e6f98e3d1e8ba95 
 
 
 
