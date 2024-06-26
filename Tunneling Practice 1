@@ -1,0 +1,90 @@
+Using Best Tunneling practices:
+
+    Build a Dynamic (-D) Tunnel to each system so that you can run your tools using proxychains to enumerate and interact with internal services.
+    Use Local (-L) and Remote (-R) tunnels where appropriate to delve deeper into the network.
+    Write out your commands on a piece of paper or a text editor and be ready to go over this as a class.
+
+
+
+
+
+Tunnels Practice
+
+    Entry Float IP: 10.50.24.91
+
+        Your Network Number is N (Given by Instructor)
+
+        Credentials: net{N}_studentX:passwordX
+
+        X is your student number
+
+
+
+
+
+
+ DTC: Task 2-3 Start Flags
+
+    Task 2 - Tunnels Prep: The_Only_Easy_Day_Was_Yesterday
+
+    Task 3 - Donovian Tunnels Training: dig_dug_dig_dug
+
+        Your Network Number is N (Given by Instructor)
+
+        Credentials: net{N}_studentX:passwordX
+
+        X is your student number
+
+        T3 (Atropia) Float IP address is - 10.50.20.51
+
+        T4 (Pineland) Float IP address is - 10.50.24.9 (Note - You can only telnet here to act as an insider, this will not be a routed path)
+
+
+
+
+
+
+
+ssh net1_student19@10.50.24.91
+
+
+
+1. Tunnel Prep – What is localhost
+
+
+What is the word "localhost" associated with? (Max 2 Attempts)
+
+A. Loopback address
+B. 127.0.0.1
+C. Both A and B.
+D. None of the above.
+
+
+
+
+C
+
+
+
+
+2. Tunnel Prep – Alternate port 1
+
+Assuming the following syntax is used:
+
+OPS$ ssh cctc@10.50.1.150 -p 1111
+
+What is the 1111 port referring to? (Max 2 Attempts)
+
+A. nothing. Incorrect syntax
+B. alternate ssh port on 10.50.1.150
+C. local listening port on OPS
+D. port mapped to localhost on 10.50.1.150 
+
+
+
+
+
+
+
+
+
