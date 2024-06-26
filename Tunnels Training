@@ -63,7 +63,7 @@ proxychains wget -r ftp://10.3.0.1
 
 
 bluehost2:
-cd 10.3.0.1
+cd 10.3.0.1   
 cat flag.txt
 
 You have accessed Cortina's FTP server. The flag is "If I'm not back in five minutes, just wait longer!"
