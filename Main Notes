@@ -93,7 +93,7 @@ Switch Operation
   > # Cause switch to fill table with bogus addresses
   > # Switch will not be able to learn new (valid) MAC Addresses
 
-
+ 
 MAC Addressing
 > Length:  48-bit | 6 byte | 12 Hex
 > Types
