@@ -158,6 +158,52 @@ T3 is the authorized initial pivot
 Identify the flag on Mohammed's FTP Server
 
 
+on T4 console:
+
+
+ssh net1_student6@10.3.0.10 -R 10688:localhost:22 -NT
+
+
+on T3 console:
+ssh net1_student6@10.50.20.51 -L 10687:localhost:10688 -NT
+
+on bluehost console:
+ssh net1_student6@localhost -p 10687 -D 9050 -NT
+
+
+on bluehost2 console:
+proxychains ./ncscan.sh 
+ProxyChains-3.1 (http://proxychains.sf.net)
+Enter network address (e.g. 192.168.0): 
+10.2.0
+Enter starting host range (e.g. 1): 
+1
+Enter ending host range (e.g. 254): 
+254
+Enter ports space-delimited (e.g. 21-23 80): 
+21 80
+(UNKNOWN) [10.2.0.1] 80 (http) open : Operation now in progress
+(UNKNOWN) [10.2.0.2] 21 (ftp) open : Operation now in progress
+(UNKNOWN) [10.2.0.2] 80 (http) open : Operation now in progress
+
+
+
+
+
+proxychains wget -r ftp://10.2.0.2
+
+
+cd 10.2.0.2/
+student@blue-internet-host-student-6:~/10.2.0.2$ ls
+flag.txt  welcome.msg
+student@blue-internet-host-student-6:~/10.2.0.2$ cat flag.txt 
+You have accessed Mohammed's FTP server. The flag for is this important intel: I'm sorry, Dave. I'm afraid I can't do that-Hal, A Space Odyssey!
+
+
+
+
+
+
 
 
 
