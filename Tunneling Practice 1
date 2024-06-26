@@ -350,9 +350,43 @@ D. called wrong port in line 3
 A
 
 
+17. Tunnel Prep – Local to 3rd Pivot TELNET
+
+Using the Tunnels Prep Diagram provided in the start to this task, please fill in the blanks to complete the following ssh command.
+
+Which ssh syntax would properly setup a 3rd Local tunnel to PC3 TELNET port using the tunnels made in Question 6 and Question 12? (Max 2 Attempts)
+
+
+#6 ssh -L 1111:localhost:22 cctc@10.50.1.150 -NT
+#12 ssh -L 2222:100.1.1.2:22 cctc@localhost -p 1111 -NT
+
+A. ssh -L 3333:192.168.2.2:23 -p 2222 cctc@100.1.1.1 -NT
+B. ssh -p 2222 cctc@localhost -L 3333:192.168.2.1:23 -NT
+C. ssh -L 3333:192.168.2.2:23 cctc@localhost -NT
+D. ssh -p 2222 cctc@localhost -L 3333:192.168.2.2:23 -NT 
+
+
+D
 
 
 
+
+
+
+18. Tunnel Prep – Telnet to 3rd Pivot
+
+Using the Tunnels Prep Diagram provided in the start to this task, please fill in the blanks to complete the following ssh command.
+
+Which syntax would allow us to telnet to PC3 using the tunnel made in Question 17? (Max 2 Attempts)
+#17 ssh -p 2222 cctc@localhost -L 3333:192.168.2.2:23 -NT 
+
+A. telnet localhost:3333
+B. telnet localhost 3333
+C. telnet 192.168.2.2 3333
+D. telnet localhost -p 3333 
+
+
+B
 
 19. Tunnel Prep – Remote
 
@@ -369,3 +403,24 @@ D. ssh -R 4444:192.168.2.2:22 cctc@localhost -NT
 
 
 C
+
+
+20. Tunnel Prep – Local to Remote
+
+
+
+Using the Tunnels Prep Diagram provided in the start to this task, please fill in the blanks to complete the following ssh command.
+
+Which syntax would properly setup a Local tunnel to map to the tunnel made in Question 19 using the tunnel made in Question 6 and Question 12? (Max 2 Attempts)
+
+
+#6 ssh -L 1111:localhost:22 cctc@10.50.1.150 -NT
+#12 ssh -L 2222:100.1.1.2:22 cctc@localhost -p 1111 -NT
+#19 ssh -R 4444:localhost:22 cctc@192.168.2.1 -NT
+
+A. ssh cctc@localhost -p 2222 -L 5555:localhost:4444 -NT
+B. ssh cctc@localhost -p 2222 -L 5555:100.1.1.1:4444 -NT
+C. ssh -L 5555:localhost:4444 -p 2222 cctc@100.1.1.1 -NT
+D. ssh -L 5555:192.168.2.2:22 -p 4444 cctc@100.1.1.1 -NT
+
+A
