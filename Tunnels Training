@@ -1,0 +1,164 @@
+1. Tunnels Training - Local Practice
+
+
+T3 is the authorized initial pivot
+
+Conduct passive recon on the Target T3, it appears to have access to the 10.3.0.0/24 subnet.
+
+    Create a Local Port Forward from your Internet_Host to T3 targeting:
+
+ip: 10.3.0.27
+port: `HTTP``
+
+Identify the flag on Victoria's HTTP Server
+
+
+Step one get into pivot
+
+
+bluehost1:
+
+ssh net1_student6@10.50.20.51 
+
+
+Step two creater forwarder
+
+bluehos2t:
+ssh net1_student6@10.50.20.51 -L 10699:10.3.0.27:80 -NT
+
+
+step tgree wget with loopback ip on port we specified 
+Check ips to ports:
+ss -ntlp
+
+
+wget -r http://127.0.0.1:10699
+cd to directory made
+mimeopen index.html
+
+
+You have accessed Victoria's HTTP server. The flag is: We are not interested in the possibilities of defeat. They do not exist. 
+
+
+
+2. Tunnels Training - Dynamic Practice
+T3 is the authorized initial pivot
+
+Conduct passive recon on the Target T3, it appears to have access to the 10.3.0.0/24 subnet.
+
+    Create a Dynamic Port Forward from Internet_Host to T3 then use proxychains to pull the flag.
+
+Target ip: 10.3.0.1
+
+Identify the flag on Cortina's FTP Server
+
+
+
+bluehost1:
+ssh net1_student6@10.50.20.51 -D 9050 -NT
+
+
+bluehost2:
+proxychains wget -r ftp://10.3.0.1
+
+
+bluehost2:
+cd 10.3.0.1
+cat flag.txt
+
+You have accessed Cortina's FTP server. The flag is "If I'm not back in five minutes, just wait longer!"
+
+
+
+3. Tunnels Training - Compromised
+
+Access to T4 has been provided via telnet.
+
+This is a Compromised host within Donovia
+
+Leverage this internal access to act as an insider threat throughout this Grorgan Cyber Training Operation.
+
+Conduct passive recon on this host and determine where the shared location for data relating to CCTC is on the machine.
+
+from bluehost to get to T4:
+ telnet 10.50.24.9
+net1_student6
+password6
+
+T4:
+find / -name flag* 2> /dev/null
+
+cat /usr/share/cctc/flag.txt
+
+You have accessed Jose's shared folder where he saves information. Your flag is: Star Wars!
+
+
+
+
+
+
+
+
+4. Tunnels Training - Remote Practice
+
+
+T3 is the authorized initial pivot
+
+Conduct passive recon on the Target T4, it appears to have access to the 10.2.0.0/25 subnet.
+
+    Create a Remote Port Forward from T4 to T3 binding the source as one of Your authorized ports, from the Mission Prompt, targeting:
+
+ip: 10.2.0.2 port: HTTP
+
+    Create a Local Port Forward from Internet_Host to T3 targeting the port you just established.
+
+When creating tunnels your authorized port ranges to utilize are NssXX (N = Net number, ss = Student Number and XX = is student assigned port number)
+
+    Use curl or wget to pull the flag.
+
+Identify the flag on Mohammed Web Server
+
+
+TELNET TO T4:
+ssh -R 10688:localhost:22 net1_student6@10.3.0.10 -NT
+
+
+
+bluehost1:
+
+ssh net1_student6@10.50.20.51 -L 10687:localhost:10688 -NT
+
+bluehost2:
+
+ssh net1_student6@localhost -p 10687 -L 10686:10.2.0.2:80 -NT
+
+
+
+
+bluehost3:
+
+wget -r http://localhost:10686
+
+cd localhost\:10686/
+
+mimeopen index.html 
+
+
+You have accessed Mohammed's HTTP server. The flag is: Millennium Falcon! 
+
+
+
+
+5. Tunnels Training - Mohammed FTP
+
+T3 is the authorized initial pivot
+
+    Build a Dynamic tunnel to T4 and conduct active recon to find the ``Mohammed" host.
+
+Identify the flag on Mohammed's FTP Server
+
+
+
+
+
+
