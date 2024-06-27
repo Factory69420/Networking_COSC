@@ -1,4 +1,4 @@
-1. Data Collection - Initial Ports
+---------------------1. Data Collection - Initial Ports-------------------
 
 
 
@@ -29,7 +29,7 @@ mimeopen flag.png
 
 
 
-2. Data Collection - High port
+-------------------2. Data Collection - High port-----------------------
 Net-SSH-03 has a flag being hosted on a high port, what country is it referring to with the question?
 
 
@@ -61,7 +61,12 @@ The flag is the country that the Inventor of SSH is from.
 Google this answer is finland.
 
 
-3. Data Collection - 1st Pivot
+
+
+
+
+
+------------------3. Data Collection - 1st Pivot----------------------
 
 What is the IP Address of Net-SSH-02.
 
@@ -80,16 +85,7 @@ just looked at ./scan.sh IPS from bluehost after tunnels from question 1 are set
 
 
 
-
-
-
-
-
-
-
-
-
-4. Data Collection - 1st Pivot Flag
+----------------------4. Data Collection - 1st Pivot Flag-------------------------------------
 
 In relation to Data Collection - 1st Pivot question.
 
@@ -103,6 +99,20 @@ mimeopen flag.png
 
 
 the flag is: <><><><>
+
+
+
+-------------------6. Data Collection - 2nd Pivot-------------------------
+
+
+Net-SSH-04 is another potential pivot.
+
+This system has several open ports. What is the flag on it's HTTP port?
+
+
+
+Check map it is like goodbye my friend 
+use wget on it
 
 
 
