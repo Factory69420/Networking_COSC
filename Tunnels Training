@@ -203,6 +203,46 @@ You have accessed Mohammed's FTP server. The flag for is this important intel: I
 
 
 
+6. Tunnels Training - Cortina HTTP
+
+T3 is the authorized initial pivot
+
+Build a Dynamic tunnel to T3 and conduct active recon to find the Cortina host.
+Identify the flag on Cortina's HTTP Server
+
+Bluehost:
+#TUnnel to t3
+ssh net1_student6@10.50.20.51 -L 10650:localhost:22 -NT
+
+
+bluehost2:
+#dynamic tunnel which lets me talk to http server through t3
+ssh net1_student6@localhost -p 10650 -D 9050 -N
+
+
+bluehost 3:
+proxychains wget -r http://10.3.0.1
+
+cat the file
+
+
+7. Tunnels Training - Victoria FTP
+
+T3 is the authorized initial pivot
+
+Use your Dynamic tunnel to T3 and conduct active recon to find the Victoria host.
+Identify the flag on Victoria's FTP Server
+
+only difference is
+proxychains wget -r ftp://10.3.0.27
+
+
+Invention, my dear friends, is 93% perspiration, 6% electricity, 4% evaporation, and 2% butterscotch ripple.
+
+
+
+
+
 
 
 
