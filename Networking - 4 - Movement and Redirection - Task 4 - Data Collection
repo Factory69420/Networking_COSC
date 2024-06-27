@@ -36,11 +36,29 @@ Net-SSH-03 has a flag being hosted on a high port, what country is it referring 
 
 do ip a on terminal you established dynamic tunnel to find IP to scan
 
+.30 is Net-SSH-03
 
 
+proxychains ./scan.sh 
+ProxyChains-3.1 (http://proxychains.sf.net)
+Enter network address (e.g. 192.168.0): 
+192.168.0
+Enter starting host range (e.g. 1): 
+30
+Enter ending host range (e.g. 254): 
+30
+Enter ports space-delimited (e.g. 21-23 80): 
+1025-5100
+
+proxychains nc 192.168.0.30 4444
 
 
+ProxyChains-3.1 (http://proxychains.sf.net)
+|S-chain|-<>-127.0.0.1:9050-<><>-192.168.0.30:4444-<><>-OK
 
+The flag is the country that the Inventor of SSH is from.
+
+Google this answer is finland.
 
 
 3. Data Collection - 1st Pivot
