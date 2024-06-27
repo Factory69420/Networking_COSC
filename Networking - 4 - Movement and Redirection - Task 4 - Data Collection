@@ -13,12 +13,12 @@ bluehost:
 telnet 10.50.27.147
 
 from telnet:
-ssh student@10.50.36.137 -R 10601:localhost:22
+ssh student@10.50.36.137 -R 10605:localhost:22
 password: password
 
 bluehost2:
 
-ssh net1_student6@localhost -p 10601 -D 9050
+ssh net1_student6@localhost -p 10605 -D 9050
 
 
 bluehost3:
