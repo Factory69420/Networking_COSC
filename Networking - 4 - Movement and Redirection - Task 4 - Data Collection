@@ -1,0 +1,26 @@
+1. Data Collection - Initial Ports
+
+
+
+What flag did you find on Net-SSH-01 after identifying it's additional open ports?
+
+The flag is hosted on a port that can not be seen from the outside.
+
+
+Please Do Not Throw Sausage Pizza Away
+
+bluehost:
+telnet 10.50.27.147
+
+from telnet:
+ssh student@10.50.36.137 -R 10601:localhost:22
+password: password
+
+bluehost2:
+
+ssh net1_student6@localhost -p 10601 -D 9050
+
+
+bluehost3:
+
+proxychains wget -r http://localhost
