@@ -7,7 +7,7 @@ What flag did you find on Net-SSH-01 after identifying it's additional open port
 The flag is hosted on a port that can not be seen from the outside.
 
 
-Please Do Not Throw Sausage Pizza Away
+FLAG: Please Do Not Throw Sausage Pizza Away
 
 bluehost:
 telnet 10.50.27.147
@@ -24,3 +24,68 @@ ssh net1_student6@localhost -p 10601 -D 9050
 bluehost3:
 
 proxychains wget -r http://localhost
+cd localhost
+mimeopen flag.png 
+
+
+
+2. Data Collection - High port
+Net-SSH-03 has a flag being hosted on a high port, what country is it referring to with the question?
+
+
+
+do ip a on terminal you established dynamic tunnel to find IP to scan
+
+
+
+
+
+
+
+
+3. Data Collection - 1st Pivot
+
+What is the IP Address of Net-SSH-02.
+
+It has HTTP & FTP open and has access to a single machine hidden behind it?
+
+
+
+just looked at ./scan.sh IPS from bluehost after tunnels from question 1 are setup
+
+192.168.0.20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4. Data Collection - 1st Pivot Flag
+
+In relation to Data Collection - 1st Pivot question.
+
+What is the flag found on Net-SSH-02?
+
+
+
+proxychains wget -r ftp://192.168.0.20
+cd 192.168.0.20
+mimeopen flag.png 
+
+
+the flag is: <><><><>
+
+
+
+
