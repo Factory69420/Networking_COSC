@@ -117,3 +117,31 @@ use wget on it
 
 
 
+
+
+
+-------------------------------------7. Data Collection - 2nd Pivot Access----------------------------------------
+
+
+Continuing from Data Collection - 2nd Pivot question.
+
+What other subnet does Net-SSH-04 have access to?
+
+Example:
+
+10.10.0.0/29
+
+
+
+hint.png gotten from wget on the 192.168.0.40 IP
+
+
+
+
+
+
+
+
+
+172.16.0.0/24
+
