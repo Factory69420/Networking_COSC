@@ -145,3 +145,30 @@ hint.png gotten from wget on the 192.168.0.40 IP
 
 172.16.0.0/24
 
+
+
+
+
+
+---------------------------------------9. Data Collection - Inner --------------------------------------------
+
+What is the flag found on Net-SSH-06 that was identified in the Inner Net Challenge".
+
+The flag can be found hosted on one of its open service ports.
+
+0x8100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
