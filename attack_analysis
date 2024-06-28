@@ -1,0 +1,102 @@
+
+
+2. Attack Analysis - IP's
+
+
+Determine all IP addresses that were captured in the pcap, and list them in order. You should find 10.
+
+Example:
+
+1.1.1.1,2.2.2.2,3.3.3.3
+
+
+91.189.89.199,192.168.10.101,192.168.10.111,192.168.10.112,192.168.41.1,192.168.41.2,192.168.41.130,192.168.41.254,224.0.0.251,239.255.255.250
+
+
+
+
+3. Attack Analysis - Hosts
+
+How many hosts are in the capture?
+
+8 because 2 of the ips in endpoints are private idk why
+
+
+
+
+
+4. Attack Analysis - OSI Layer
+
+
+
+
+What Transport Layer Protocol is the most prominent in the capture?
+
+
+udp
+
+just guessed between that and tcp
+
+
+
+
+
+
+5. Attack Analysis - OS Type
+
+p0f has extensive finger printing capabilities (as indicated by the name).
+
+Use p0f to read the pcap and determine the OS type of the host: 192.168.10.101
+
+
+
+sudo p0f -r attack_analysis1.pcap -o 192.168.10.101
+
+
+Linux 3.11 
+
+
+6. Attack Analysis - Cellular
+
+There is traffic related to 2G & 3G Cellular Communications, which uses a packet oriented mobile data standard.
+
+What standard/protocol is performing this communication?
+be sure to name the protocol and not the standard being used!
+
+
+Just used chatgpt
+
+GPRS
+
+
+7. Attack Analysis - Address 1 - Types
+
+Within the packet capture, the following IP Address was identified:
+
+239.x.x.x
+
+What type of address is this?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
