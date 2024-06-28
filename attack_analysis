@@ -79,6 +79,372 @@ What type of address is this?
 
 
 
+multicast
+
+
+8. Attack Analysis - Address 2 - Protocol
+
+
+The protocol being used to generate the traffic associated with 239.x.x.x is a UDP based protocol which is commonly used with UPnP for finding devices and services on the network.
+
+What is this protocol?
+
+
+
+
+SSDP
+
+
+9. Attack Analysis - Address 3 - Source
+
+
+What is the mac address of the device that is sending the multicast SSDP traffic?
+
+Example:
+00:00:00:00:00:00
+
+
+
+
+
+00:50:56:c0:00:08
+
+
+
+
+
+
+10. Attack Analysis - Address 4 - User Agent
+
+What user agent is making use of the protocol you discovered in Attack Analysis - Address 2 - Protocol?
+
+
+
+Google Chrome/58.0.3029.110 Windows
+
+
+
+11. Attack Analysis - DNS 1
+
+What is the IP Address for the DNS Server in the packet capture?
+
+
+
+192.168.41.2
+
+
+
+
+12. Attack Analysis - DNS 2 - Port
+
+What IP Address and Port is the query responding to?
+
+Example:
+XXX.XXX.XXX.XXX:PORT
+
+192.168.10.111:54966
+
+
+
+13. Attack Analysis - Service 1
+
+What is the Service indicated by the use of the following IP Address?
+
+224.0.0.251
+
+this is multidns:
+mDNS
+
+14. Attack Analysis - Service 2
+
+What is the FQDN and IP Address of the device indicated in the response to the query identified in `Attack Analysis - Service 1``? Look for the DNS A record.
+
+Example (No Spaces):
+keurig.domain,1.1.1.1
+
+
+
+HP705A0FF92F8D.local,192.168.1.7
+
+
+
+
+
+15. Attack Analysis - Vulnerability
+
+Attackers will seek unique ways to avoid being caught. This Traffic has been reported to contain a vulnerability that crashes wireshark due to an out-of-bounds write, detailed in CVE-2017-13766
+
+What Protocol did the attackers use to achieve this and which server IP Address and Port was targeted?
+
+Example:
+PROTOCOL 1.1.1.1:PORT
+
+
+profinet 192.168.10.111:55
+
+
+
+
+16. Attack Analysis - IOT
+
+
+It was identified that an exploit targeting a prominent IOT Systems was captured targeting 192.168.10.111 over UDP port 55.
+
+This protocol was identified as an open global standard for wireless technology that uses low-power digital radio signals for indoor Personal Area Networks, uses the IEEE 802.15.4 specification as it's basis, which is often deployed in a mesh topology.
+
+What is the name of this Protocol and what is the Packet Type being flooded?
+
+Example: (No Spaces) PROTOCOL,PACKET_TYPE
+
+
+
+scop as filter for zigbee packets
+
+
+Zigbee,Hello
+
+
+17. Attack Analysis - RCE
+
+
+Remote arbitrary Code Execution was captured targeting 192.168.10.111 via a gaming protocol.
+
+What is the name of the game?
+
+Example:
+fortnite
+
+
+quake
+
+
+
+
+18. Attack Analysis - Vuze
+
+The Vuze DHT protocol was used as an exploit against 192.168.10.111, indicated in the protocol hierarchy page of Wireshark.
+
+After analysis and some Open Source Research, what type of Application is Vuze?
+
+
+
+
+torrent
+
+
+
+19. Attack Analysis - Conversation
+
+
+
+
+Determine the IP addresses for the top two talkers in the capture (the two hosts that generated the most traffic). (list in order e.g. 1.1.1.1,2.2.2.2)
+
+
+
+192.168.10.101,192.168.10.111
+
+
+
+
+20. Attack Analysis - OS Fingerprint
+
+Initial TTL can be used to determine host operating systems. Use a tool that will perform fingerprinting based on other criteria to determine the OS of the host with the IP address 192.168.10.111.
+
+
+
+
+use p0f like last time
+
+
+Linux 3.11
+
+
+
+21. Attack Analysis - Attacked Port
+
+
+Filter traffic communication between the IP addresses of the hosts determined in challenge 19, a UDP flood is occurring. What port is being attacked?
+
+
+
+
+55
+
+
+
+22. Attack Analysis - Attacked Port 2
+
+In the last challenge you discovered port 55 being targeted for attacks, this is within the well known range, what typical service is associated with it?
+
+isi-gl
+
+
+
+23. Attack Analysis - Type of Attack
+
+What type of attack is the UDP flood discovered in challenge 22?
+
+
+dos
+
+
+24. Attack Analysis - Type of Attack 2
+
+
+Is this an automated attack? (yes/no)
+
+Once you have completed challenge questions 1 - 24 you can shorten the pcap to make Wireshark run faster.
+
+First run this filter to select everything but the flooding of UDP port 55.
+
+!(udp.port==55)
+
+Next export the selected packets as a new pcap using File > Export Specified Packets.
+
+Save as a new pcap and load it in Wireshark. You should now only have 86345 packets instead of the 1.9 million you had before.
+
+
+
+yes
+
+
+
+
+25. Attack Analysis - Server Version
+
+
+What version of Apache is running on the web server at the 192.168.10.111 address according to raw signatures in p0f?
+
+sudo p0f -r exported.pcap | grep "\[ 192.168.10.111" -B 5 | grep -i apache
+
+
+Apache/2.4.18
+
+
+
+26. Attack Analysis - Website Tool
+
+What is the name of the website creation tool/software used on the 192.168.10.111 server indicated in the HTTP POST/GET messages and plugin scanning done by the attackers? (Supply the main software, not the plugin names)
+
+Can use: http.request.method==" "
+
+http
+
+wordpress
+
+
+
+
+
+27. Attack Analysis - Scanning Tools
+
+Wordpress provides a plethora of plugins, however these are notorious for vulnerabilities, and there are several ways to scan these types of servers. Perform OSR on some of the top tools that could be used.
+
+Determine which 2 tools were used for scanning against 192.168.10.111. These tools can be identified through examining the user-agent strings.
+
+(The answer has no spaces)
+
+scanner1,scanner2
+
+
+Nikto,WPScan
+
+
+
+28. Attack Analysis - Credentials
+
+
+
+What is the username and password that was attempted against the axis2 plugin? (submit answer in the following format: jeff:mynamisjeff)
+
+http.request.uri contains "axis2" or http.host contains "axis2"
+
+
+admin:axis2
+
+
+29. Attack Analysis - Plugin
+
+Consider the user agent strings identified in challenge 27.
+
+Analyze the related traffic, and identify what Plugin the vulnerability scan triggered on?
+
+
+
+reflex-gallery
+
+
+
+
+
+
+30. Attack Analysis - Plugin CVE
+Refer to challenge 29. What CVE is related to the plugin the web vulnerability scanner found? (you need to include the version in your research) Submit your answer as the cve listing (e.g. CVE-2019-9999)
+
+CVE-2015-4133
+
+31. Attack Analysis - Exploit
+Reading the CVE details will provide you with the knowledge to know what the attacker is able to exploit.
+
+What was the Filename that was successfully uploaded by the attacker to 192.168.10.111?
+
+
+
+ip.addr == 192.168.10.111
+and http.request.method == POST
+
+
+
+
+msf.php
+
+
+
+32. Attack Analysis - Exploit 2
+
+The malicious upload referred to in challenge 31 is used to start communication for a specific tool, what is the name of this tool/framework (not the attack payload)?
+
+
+
+Metasploit
+
+
+33. Attack Analysis - Payload 
+
+Refer to challenge 32. Perform open-source research:
+
+This popular attack payload provides an interactive shell to the attacker, this payload uses in-memory DLL injection. Identify the payload name (this is a single word, not the payload in hex).
+
+
+
+Meterpreter
+
+
+34. Attack Analysis - Language 
+
+What programming language is this framework discovered in question 32 written in?
+
+
+ruby
+
+
+
+
+35. Attack Analysis - Payload UUID
+
+Refering to the payload identified in Challenge 33, what is the Payload UUID identified in the session of the host that was first compromised?
+
+Enter answer in this format: \x11\x22\x33\x44\x55\x66\x77\x88\x99\xaa\xbb\xcc\xdd\xee\xff
+
+
+\x81\xc2\xe4\x1d\xc3\x06\xf6\xf6\xeb\xd8\xf8\xd7\xb2\xe2\xea\x5b
+
+
+
+36. Attack Analysis - Attacked IP
+
+The 192.168.10.111 web server is now under control of the attacker through a reverse TCP connection via the meterpreter session. The 192.168.10.111 server is used to pivot to another target and perform the same actions the attacker took against 192.168.10.111, what is its ip address?
 
 
 
@@ -87,6 +453,83 @@ What type of address is this?
 
 
 
+192.168.10.112
+
+
+
+
+37. Attack Analysis - Malware Type
+
+What type of malware is uploaded to the 192.168.10.112 server (not the malicious php upload to kick off the meterpreter session)? Look for a connection back to a malware repository in the TCP stream.
+
+
+
+ransomware
+
+
+
+38. Attack Analysis - New Payload UUID
+
+
+What is the payload UUID for the new meterpreter session on the host at 192.168.10.112?
+
+Enter andwer in this format: \x11\x22\x33\x44\x55\x66\x77\x88\x99\xaa\xbb\xcc\xdd\xee\xff\
+
+\xc5\x0f\xbc\x3a\x9f\x31\x91\x0b\x42\x66\x51\x69\x1b\x5c\x43\xa3
+
+
+39. Attack Analysis - Malware Location
+
+
+Refer back to challenge 37, the malware referenced in this question was identified as ransomware. What is the github repo from which the malware is downloaded? (submit your answer in the following format: https://github.com/horst_simco/malwarez)
+
+\xc5\x0f\xbc\x3a\x9f\x31\x91\x0b\x42\x66\x51\x69\x1b\x5c\x43\xa3
+
+https://github.com/mauri870/ransomware
+
+
+
+
+
+40. Attack Analysis - Malware Language 
+
+According to the github site, the malware was determined to be ransomware. What programming language was used to write this?
+
+
+go
+
+
+
+41. Attack Analysis - OS Target
+
+
+Refer back to challenge 38, the malware referenced in this question was identified as ransomware. What OS is targeted by the malware?
+
+windows
+
+
+
+
+
+42. Attack Analysis - Architecture
+
+The ransomware indicated in challenge 37 targets what type of system architecture?
+
+x86
+
+
+
+
+
+43. Attack Analysis - Assembly Description
+
+
+What is the assembly description attribute in the assembly manifest for the ransomware?
+
+
+
+
+Nothing to see here
 
 
 
@@ -95,8 +538,14 @@ What type of address is this?
 
 
 
+44. Attack Analysis - Date
 
 
+In the pcap, there is a protocol that provides clock synchronization between systems over packet-switched networks in this pcap. Use the information within this protocol's header to determine the date of this packet capture. (format your answer as follows: Oct 20, 2019)
+
+
+
+Jun 9, 2017
 
 
 
