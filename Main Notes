@@ -1177,11 +1177,11 @@ On ssh -L opens local port on your machine B: is a hop after your ssh and -R ope
 --------------------------------------------------------------------------------------------Day 7-----------------------------------------------------------------------------
 
 
+ssh student@10.50.36.137 -R 10605:localhost:22
 
+ssh net1_student6@localhost -p 10605 -L 10606:192.168.0.40:5555
 
-
-
-
+ssh net1_student6@localhost -p 10606 -L 10607:172.16.0.60:23
 
 
 
