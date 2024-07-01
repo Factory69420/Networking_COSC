@@ -14,8 +14,13 @@ Pivot/Host A: ssh <OurIP> -R 1111:localhost:8642 -NT #1111 is opened on our box 
 IH Dynamic: ssh localhost -p 1111 -D 9050 -NT # Dynamic tunnel #1
 IH: ssh student@localhost -p 1111 -L 2222:192.168.100.60:22 -NT #Host B Ip 192.168.100.60 #2222 is another random high we picked
 IH: ssh student@localhost -p 2222 -D 9050 -NT #New dynamic tunnel for host B
-
-
+IH: ssh student@localhost -p 2222 -L 3333:10.90.50.140:6481 -NT
+IH: ssh student@localhost -p 3333 -D 9050 -NT
+IH: ssh student@localhost -P 3333 -L 4444:172.20.21.5:23 -NT
+IH: telnet localhost 4444
+HOST D: ssh student@72.20.21.4 -R 5555:localhost:22
+IH ssh student@localhost -p 3333 -L 6666:localhost:5555
+IH ssh student@localhost -P 6666 -D 9050 -NT
 
 Protocol Data Unit (PDU)
   Session-Application -> Data
