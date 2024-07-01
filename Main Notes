@@ -7,7 +7,12 @@ User: KAEL-M-503
 Password: password332!
 Test Day - July 9th
 
+# telnet <IP> <PORT> 
+#Pivot/Host A: ssh <OurIP> -R 111:localhost:
 
+After second dynamic on maps do something like this:
+IH: ssh student@localhost -p <RHP2> - L ><RHP3>IPOFTARGET:VulnPort -NT
+IH: ssh student@localhost -p <RHP2> -D 9050 -NT
 
 
 Protocol Data Unit (PDU)
