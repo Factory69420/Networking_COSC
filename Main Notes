@@ -7,12 +7,14 @@ User: KAEL-M-503
 Password: password332!
 Test Day - July 9th
 
-# telnet <IP> <PORT> 
-#Pivot/Host A: ssh <OurIP> -R 111:localhost:
 
-After second dynamic on maps do something like this:
-IH: ssh student@localhost -p <RHP2> - L ><RHP3>IPOFTARGET:VulnPort -NT
-IH: ssh student@localhost -p <RHP2> -D 9050 -NT
+Tunneling Activity 4: (See image file)
+telnet <HostAIP> <PORT>  #Telents us to host A from our box
+Pivot/Host A: ssh <OurIP> -R 1111:localhost:8642 -NT #1111 is opened on our box 8642 is what they are using for ssh
+IH Dynamic: ssh localhost -p 1111 -D 9050 -NT # Dynamic tunnel #1
+IH: ssh student@localhost -p 1111 -L 2222:192.168.100.60:22 -NT #Host B Ip 192.168.100.60 #2222 is another random high we picked
+IH: ssh student@localhost -p 2222 -D 9050 -NT #New dynamic tunnel for host B
+
 
 
 Protocol Data Unit (PDU)
@@ -1191,9 +1193,21 @@ ssh net1_student6@localhost -p 10606 -L 10607:172.16.0.60:23
 
 
 
+---------------------------------------------------Day 8?-------------------------------------------------------
 
+Common iptable options
 
-
+-t - Specifies the table. (Default is filter)
+-A - Appends a rule to the end of the list or below specified rule
+-I - Inserts the rule at the top of the list or above specified rule
+-R - Replaces a rule at the specified rule number
+-D - Deletes a rule at the specified rule number
+-F - Flushes the rules in the selected chain
+-L - Lists the rules in the selected chain using standard formatting
+-S - Lists the rules in the selected chain without standard formatting
+-P - Sets the default policy for the selected chain
+-n - Disables inverse lookups when listing rules
+--line-numbers - Prints the rule number when listing rules
 
 
 
